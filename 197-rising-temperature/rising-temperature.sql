@@ -2,5 +2,5 @@
 SELECT w2.id
 FROM Weather as w1
 JOIN Weather as w2
-ON DATEDIFF(w2.recordDate, w1.recordDate) = 1
+ON w2.recordDate = DATE_ADD(w1.recordDate, INTERVAL 1 DAY)
 WHERE w2.temperature > w1.temperature;
